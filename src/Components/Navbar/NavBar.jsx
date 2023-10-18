@@ -13,9 +13,10 @@ const NavBar = () => {
                 <ul className="p-2 grid grid-cols-1 gap-1 right-2 w-full md:w-52 z-20">
                     <li><NavLink className='text-white no-underline'>Service 1</NavLink></li>
                     <li><NavLink className='text-white no-underline'>Service 1</NavLink></li>
-                </ul>FaUserCircle
+                </ul>
             </details>
         </li>
+        <li><NavLink to="/addProduct" className='text-white  no-underline '>Add Product</NavLink></li>
         <li><NavLink to="/profile" className=' no-underline p-1 rounded-full '>
             {
                 user &&
@@ -55,12 +56,12 @@ const NavBar = () => {
                         <label tabIndex={0} className="btn btn-sm btn-ghost ">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content z-20 top-8  p-2 shadow bg-green-400 rounded-box ">
+                        <ul tabIndex={0} className="menu menu-sm dropdown-content z-20 top-8  p-2 shadow bg-green-400 rounded-box space-y-1">
                             {links1}
                         </ul>
                     </div>
                     <div className="hidden md:flex justify-end items-start">
-                        <ul className="menu flex menu-horizontal px-1 items-center mb-0">
+                        <ul className="menu flex menu-horizontal px-1 items-center mb-0 gap-1">
                             {links1}
                         </ul>
                     </div>

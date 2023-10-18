@@ -7,6 +7,7 @@ import Logout from "../Pages/Logout/Logout";
 import Profile from "../Pages/Profile/Profile";
 import Register from "../Pages/Register/Register";
 import PrivateRout from "./PrivateRout";
+import AddProduct from "../Pages/AddProduct/AddProduct";
 
 const router = createBrowserRouter([
     {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
         {
           path: "/",
           element: <Home></Home>,
+        },
+        {
+          path: "/addProduct",
+          element: <PrivateRout><AddProduct></AddProduct></PrivateRout>,
         },
         {
           path: "/profile",
