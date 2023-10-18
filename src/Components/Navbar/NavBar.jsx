@@ -1,21 +1,35 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom"
 import { AuthContext } from "../../AuthProviders/AuthProvider";
+import { FaUserCircle } from "react-icons/fa";
 
 const NavBar = () => {
-    const { user,logOut } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     const links1 = <>
         <li className="text-bold"><NavLink to="/" className='text-white no-underline'>Home</NavLink></li>
         <li tabIndex={0}>
             <details>
                 <summary>Services</summary>
                 <ul className="p-2 grid grid-cols-1 gap-1 right-2 w-full md:w-52 z-20">
-                    <li><NavLink  className='text-white no-underline'>Service 1</NavLink></li>
-                    <li><NavLink  className='text-white no-underline'>Service 1</NavLink></li>
-                </ul>
+                    <li><NavLink className='text-white no-underline'>Service 1</NavLink></li>
+                    <li><NavLink className='text-white no-underline'>Service 1</NavLink></li>
+                </ul>FaUserCircle
             </details>
         </li>
-        <li><NavLink to="/profile" className='text-white no-underline'>profile</NavLink></li>
+        <li><NavLink to="/profile" className=' no-underline p-1 rounded-full '>
+            {
+                user &&
+                <>
+                    <img className="rounded-full w-10 " src={user?.photoURL} alt="" />
+                </>
+            }
+            {
+                !user &&
+                <>
+                    <span className="rounded-full  text-gray-800 text-4xl "><FaUserCircle></FaUserCircle></span>
+                </>
+            }
+        </NavLink></li>
         {
             !user &&
             <>
@@ -46,7 +60,7 @@ const NavBar = () => {
                         </ul>
                     </div>
                     <div className="hidden md:flex justify-end items-start">
-                        <ul className="menu flex menu-horizontal px-1">
+                        <ul className="menu flex menu-horizontal px-1 items-center mb-0">
                             {links1}
                         </ul>
                     </div>
