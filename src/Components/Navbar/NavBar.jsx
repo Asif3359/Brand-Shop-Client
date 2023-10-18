@@ -7,15 +7,7 @@ const NavBar = () => {
     const { user, logOut } = useContext(AuthContext);
     const links1 = <>
         <li className="text-bold"><NavLink to="/" className='text-white no-underline'>Home</NavLink></li>
-        <li tabIndex={0}>
-            <details>
-                <summary>Services</summary>
-                <ul className="p-2 grid grid-cols-1 gap-1 right-2 w-full md:w-52 z-20">
-                    <li><NavLink className='text-white no-underline'>Service 1</NavLink></li>
-                    <li><NavLink className='text-white no-underline'>Service 1</NavLink></li>
-                </ul>
-            </details>
-        </li>
+        <li className="text-bold"><NavLink to="/myCart" className='text-white no-underline'>My Cart</NavLink></li>
         <li><NavLink to="/addProduct" className='text-white  no-underline '>Add Product</NavLink></li>
         <li><NavLink to="/profile" className=' no-underline p-1 rounded-full '>
             {
