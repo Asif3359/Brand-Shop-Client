@@ -1,9 +1,8 @@
-import { useState } from 'react'
+
 import { Outlet, NavLink } from 'react-router-dom';
 import NavBar from './Components/Navbar/NavBar';
 import Footer from './Components/Footer/Footer';
 function App() {
-  const [count, setCount] = useState(0)
   return (
     <div className=''>
       <div className='bg-green-500'>

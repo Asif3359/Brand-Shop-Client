@@ -1,41 +1,38 @@
-import React from 'react';
-import { CCarousel, CCarouselCaption, CCarouselItem, CImage } from '@coreui/react';
-import 'bootstrap/dist/css/bootstrap.min.css'
-
 
 const Slider = () => {
     return (
         <div>
             <div>
-                <CCarousel controls indicators >
-                    <CCarouselItem>
-                        <CImage className="d-block w-100 h-72 md:h-[70vh] lg:h-[90vh] " src={`https://www.topgear.com/sites/default/files/2022/07/13.jpg`} alt="slide 1" />
-                        <CCarouselCaption className="hidden d-md-block">
-                            <div className='bg-gray-400 bg-opacity-30 p-2 rounded-md shadow-inherit'>
-                                <h5>First slide label</h5>
-                                <p>Some representative placeholder content for the first slide.</p>
-                            </div>
-                        </CCarouselCaption>
-                    </CCarouselItem>
-                    <CCarouselItem>
-                        <CImage className="d-block w-100 h-72 md:h-[70vh] lg:h-[90vh]" src={`https://www.topgear.com/sites/default/files/2022/07/13.jpg`} alt="slide 2" />
-                        <CCarouselCaption className="hidden d-md-block">
-                            <div className='bg-gray-400 bg-opacity-30 p-2 rounded-md shadow-inherit '>
-                                <h5>Second slide label</h5>
-                                <p>Some representative placeholder content for the first slide.</p>
-                            </div>
-                        </CCarouselCaption>
-                    </CCarouselItem>
-                    <CCarouselItem>
-                        <CImage className="d-block w-100 h-72 md:h-[70vh] lg:h-[90vh]" src={`https://www.topgear.com/sites/default/files/2022/07/13.jpg`} alt="slide 3" />
-                        <CCarouselCaption className="hidden d-md-block md:block">
-                            <div className='bg-gray-400 bg-opacity-30 p-2 rounded-md shadow-inherit '>
-                                <h5>Third slide label</h5>
-                                <p>Some representative placeholder content for the first slide.</p>
-                            </div>
-                        </CCarouselCaption>
-                    </CCarouselItem>
-                </CCarousel>
+                <div className="carousel w-full h-[90vh]">
+                    <div id="slide1" className="carousel-item relative w-full">
+                        <img src="https://www.topgear.com/sites/default/files/2022/07/13.jpg" className="w-full" />
+                        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                            <a href="#slide4" className="btn btn-circle">❮</a>
+                            <a href="#slide2" className="btn btn-circle">❯</a>
+                        </div>
+                    </div>
+                    <div id="slide2" className="carousel-item relative w-full">
+                        <img src="https://www.topgear.com/sites/default/files/2022/07/13.jpg" className="w-full" />
+                        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                            <a href="#slide1" className="btn btn-circle">❮</a>
+                            <a href="#slide3" className="btn btn-circle">❯</a>
+                        </div>
+                    </div>
+                    <div id="slide3" className="carousel-item relative w-full">
+                        <img src="https://www.topgear.com/sites/default/files/2022/07/13.jpg" className="w-full" />
+                        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                            <a href="#slide2" className="btn btn-circle">❮</a>
+                            <a href="#slide4" className="btn btn-circle">❯</a>
+                        </div>
+                    </div>
+                    <div id="slide4" className="carousel-item relative w-full">
+                        <img src="https://www.topgear.com/sites/default/files/2022/07/13.jpg" className="w-full" />
+                        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                            <a href="#slide3" className="btn btn-circle">❮</a>
+                            <a href="#slide1" className="btn btn-circle">❯</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
