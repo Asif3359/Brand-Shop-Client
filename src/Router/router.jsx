@@ -6,6 +6,7 @@ import Login from "../Pages/Login/Login";
 import Logout from "../Pages/Logout/Logout";
 import Profile from "../Pages/Profile/Profile";
 import Register from "../Pages/Register/Register";
+import PrivateRout from "./PrivateRout";
 
 const router = createBrowserRouter([
     {
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
         },
         {
           path: "/profile",
-          element: <Profile></Profile>,
+          element: <PrivateRout><Profile></Profile></PrivateRout>,
         },
         {
           path: "/login",

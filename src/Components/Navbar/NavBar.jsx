@@ -1,23 +1,34 @@
-
-
+import { useContext } from "react";
 import { NavLink } from "react-router-dom"
+import { AuthContext } from "../../AuthProviders/AuthProvider";
 
 const NavBar = () => {
+    const { user,logOut } = useContext(AuthContext);
     const links1 = <>
         <li className="text-bold"><NavLink to="/" className='text-white no-underline'>Home</NavLink></li>
         <li tabIndex={0}>
             <details>
                 <summary>Services</summary>
                 <ul className="p-2 grid grid-cols-1 gap-1 right-2 w-full md:w-52 z-20">
-                    <li><NavLink className='text-white no-underline'>Service 1</NavLink></li>
-                    <li><NavLink className='text-white no-underline'>Service 1</NavLink></li>
+                    <li><NavLink  className='text-white no-underline'>Service 1</NavLink></li>
+                    <li><NavLink  className='text-white no-underline'>Service 1</NavLink></li>
                 </ul>
             </details>
         </li>
         <li><NavLink to="/profile" className='text-white no-underline'>profile</NavLink></li>
-        <li><NavLink to="/login" className='text-white no-underline'>login</NavLink></li>
-        <li><NavLink to="/register" className='text-white no-underline'>register</NavLink></li>
-        <li><NavLink to="/logout" className='text-white no-underline'>logout</NavLink></li>
+        {
+            !user &&
+            <>
+                <li><NavLink to="/login" className='text-white no-underline'>login</NavLink></li>
+            </>
+        }
+        {/* <li><NavLink to="/register" className='text-white no-underline'>register</NavLink></li> */}
+        {
+            user &&
+            <>
+                <li><button className='text-white no-underline' onClick={logOut}>logout</button></li>
+            </>
+        }
     </>
     return (
         <div className='text-white container mx-auto'>

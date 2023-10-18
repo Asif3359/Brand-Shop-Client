@@ -1,7 +1,24 @@
-import React from 'react';
-import {Link} from "react-router-dom"
+import React, { useContext } from 'react';
+import {Link, Navigate, useLocation, useNavigate} from "react-router-dom"
+import { AuthContext } from '../../AuthProviders/AuthProvider';
 
 const Login = () => {
+
+    const navigate = useNavigate();
+    const {socialLogIn} = useContext(AuthContext);
+    const location = useLocation();
+
+    const handleSocialLogin = (social) =>{
+        social()
+            .then(result =>{
+                const user = result.user;
+                console.log(user);
+                navigate(location?.state ? location.state : "/");
+            } )
+            .catch(error =>{
+                console.log(error.message);
+            })
+    }
     return (
         <div>
             <section className="bg-gray-50 dark:bg-gray-900">
@@ -39,7 +56,7 @@ const Login = () => {
                                 <h1 className=''>Login With</h1>
                                 <div className='border'></div>
                                 <div className='flex justify-start item-center'>
-                                    <button  className='btn btn-sm '>Google</button>
+                                    <button onClick={()=>handleSocialLogin(socialLogIn)} className='btn btn-sm '>Google</button>
 
                                 </div>
                             </div>
