@@ -12,7 +12,7 @@ const Home = () => {
     return (
         <div>
             <Slider></Slider>
-            <div className='space-y-10 container mx-auto'>
+            <div className='space-y-10 container mx-auto mb-5'>
                 <div>
                     <Brands></Brands>
                 </div>

@@ -37,8 +37,26 @@ const ProductCard = ({ cart, carts, setCarts }) => {
     }
     return (
         <div>
-            <h3>{cart.name}</h3>
-            <button onClick={handleDelete} className='btn btn-sm'>X</button>
+            <div className="card card-compact bg-base-100 border ">
+                <figure><img className='w-full h-[300px] transition  duration-300 ease-in-out hover:scale-110' src={cart.image} alt="Shoes" /></figure>
+                <div className="card-body">
+                    <h2 className="card-title">{cart.name}</h2>
+                    <p>{cart.description.slice(0, 50)}</p>
+                    <div className='flex items-center justify-between'>
+                        <div>
+                            <p className='text-end'><span className='font-bold'>Rating:</span>{cart.rating}</p>
+                        </div>
+                        <div>
+                            <p><span className='font-bold'>Price : </span>{cart.price}</p>
+                        </div>
+                    </div>
+                    <div className="card-actions justify-between">
+                        <span><button onClick={handleDelete} className='btn btn-sm btn-primary'>X</button> Remove </span>
+                        <button className="btn btn-sm btn-primary">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
     );
 };

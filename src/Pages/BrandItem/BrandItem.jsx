@@ -19,7 +19,7 @@ const BrandItem = () => {
             .then(data => {
                 const brandSelect = data.find(brand => brand.id == id);
 
-                const BrandsToShow = allBrands.filter(brand => brand.brandName == brandSelect.brandName);
+                const BrandsToShow = allBrands.filter(brand => brand.brandName.toLowerCase() == brandSelect.brandName.toLowerCase());
                 // console.log("To show", BrandsToShow);
                 setBrands(BrandsToShow);
             })

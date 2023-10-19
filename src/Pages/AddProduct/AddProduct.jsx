@@ -1,7 +1,9 @@
 import React from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const AddProduct = () => {
 
+    const navigate = useNavigate();
     const handleAddProduct = (event) => {
         event.preventDefault();
         const from = event.target;
@@ -13,7 +15,7 @@ const AddProduct = () => {
         const description = from.description.value;
         const rating = from.rating.value;
         const newProduct = {
-            name, brandName, type, image, price, description,rating
+            name, brandName, type, image, price, description, rating
         }
         // console.log(newProduct);
         fetch('http://localhost:5000/product', {
@@ -26,9 +28,10 @@ const AddProduct = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.acknowledged) {
-                    console.log(data.acknowledged);
-                }
+                navigate("/");
+                console.log(data.acknowledged);
+
+
             })
     }
     return (

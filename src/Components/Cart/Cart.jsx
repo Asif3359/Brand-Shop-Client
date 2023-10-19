@@ -5,9 +5,9 @@ const Cart = ({ brand }) => {
 
     return (
         <div>
-            <div className="w-full lg:card-side bg-base-100 shadow-xl hover:scale-105 transition delay-150 duration-300 ease-in-out rounded-lg">
-                <figure><img className='w-full h-full rounded-lg transition delay-150 duration-300 ease-in-out hover:scale-110' src={brand.image} alt="Album" /></figure>
-                <div className="card-body">
+            <div className="w-full lg:card-side bg-base-100 border  transition delay-150 duration-300 ease-in-out rounded-lg">
+                <figure><img className='w-full h-[300px] rounded-lg transition delay-150 duration-300 ease-in-out hover:scale-110' src={brand.image} alt="Album" /></figure>
+                <div className="card-body shadow-none">
                     <h2 className="card-title">{brand.name}</h2>
                     <h2 className="card-title">{brand.brandName}</h2>
                     <p>{brand.description.slice(0,20)} <Link to={`/details/${brand._id}`} className="">...See more</Link></p>

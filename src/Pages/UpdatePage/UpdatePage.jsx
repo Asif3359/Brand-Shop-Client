@@ -1,10 +1,13 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
-import swal from 'sweetalert';
+import { useLoaderData, useNavigate } from 'react-router-dom';
+import { useRef } from 'react';
+import { toast } from 'react-toastify';
 
 const UpdatePage = () => {
+    const formRef = useRef(null);
     const lodeSpecificProduct = useLoaderData();
-    const { _id ,name, brandName, type, image, price, description, rating } = lodeSpecificProduct;
+    const navigate = useNavigate();
+    const { _id, name, brandName, type, image, price, description, rating } = lodeSpecificProduct;
 
     const handleUpdateProduct = (event) => {
         event.preventDefault();
@@ -36,9 +39,18 @@ const UpdatePage = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.insertedID) {
-                    swal("Good job!", "You clicked the button!", "success");
-                }
+                toast.success('Congratulation information Updated successfully!', {
+                    position: "top-right",
+                    autoClose: 1500,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    });
+                navigate("/");
+                formRef.current.reset();
             })
     }
 
@@ -86,7 +98,7 @@ const UpdatePage = () => {
                             <input type="text" id='image' name='image' defaultValue={image} placeholder='image URL' className=' p-2 border-gray-700 rounded-lg w-full ' />
                         </div>
                         <div className=' flex  md:items-center  flex-col  md:flex-row gap-2'>
-                            <input type="submit" value="Add This Product" className='btn btn-sm btn-primary w-full' />
+                            <input type="submit" value="Submit" className='btn btn-sm btn-primary w-full' />
                         </div>
                     </form>
                 </div>

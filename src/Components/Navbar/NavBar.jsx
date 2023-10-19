@@ -5,6 +5,26 @@ import { FaUserCircle } from "react-icons/fa";
 
 const NavBar = () => {
     const { user, logOut } = useContext(AuthContext);
+
+    const userLogOut = (loginOut) => {
+        swal({
+            title: "Are you sure to log out",
+            text: "",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    swal("you are logged out successfully !", {
+                        icon: "success",
+                    });
+                    loginOut();
+                } else {
+                    swal("You are still login!!");
+                }
+            });
+    }
     const links1 = <>
         <li className="text-bold"><NavLink to="/" className='text-white no-underline'>Home</NavLink></li>
         <li className="text-bold"><NavLink to="/myCart" className='text-white no-underline'>My Cart</NavLink></li>
@@ -33,7 +53,7 @@ const NavBar = () => {
         {
             user &&
             <>
-                <li><button className='text-white no-underline' onClick={logOut}>logout</button></li>
+                <li><button className='text-white no-underline' onClick={() => userLogOut(logOut)}>logout</button></li>
             </>
         }
     </>
