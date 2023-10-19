@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom';
 
 const Cart = ({ brand }) => {
 
-    const handleDetails = () => {
-
-    }
     return (
         <div>
             <div className="w-full lg:card-side bg-base-100 shadow-xl hover:scale-105 transition delay-150 duration-300 ease-in-out rounded-lg">
@@ -13,7 +10,7 @@ const Cart = ({ brand }) => {
                 <div className="card-body">
                     <h2 className="card-title">{brand.name}</h2>
                     <h2 className="card-title">{brand.brandName}</h2>
-                    <p>{brand.description}</p>
+                    <p>{brand.description.slice(0,20)} <Link to={`/details/${brand._id}`} className="">...See more</Link></p>
                     <div className="rating rating-sm">
                         <input type="radio" name="rating-9" className="rating-hidden" />
                         <input type="radio" name="rating-9" className="mask mask-star-2" />
@@ -26,7 +23,7 @@ const Cart = ({ brand }) => {
                         <h4 className='font-bold'>{brand.price}</h4>
                         <div className='flex flex-col gap-2'>
                             <Link to={`/details/${brand._id}`} className="btn btn-primary btn-sm">Details</Link>
-                            <Link onClick={handleDetails} className="btn btn-primary btn-sm">Update </Link>
+                            <Link to={`/update/${brand._id}`} className="btn btn-primary btn-sm">Update </Link>
                         </div>
                     </div>
                 </div>

@@ -33,7 +33,7 @@ const ProductDetails = () => {
     return (
         <div className=' py-5 container mx-auto '>
 
-            <div className="relative grid grid-cols-4 items-center  border border-gray-200 rounded-lg shadow md:flex-row md:max-full  dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+            <div className="relative grid grid-cols-4 flex-wrap items-center  border border-gray-200 rounded-lg shadow md:flex-row md:max-full  dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
                 <div className='flex-1 col-span-3'>
                     <img className="  object-cover w-full rounded-t-lg h-fit md:h-auto md:w-full  md:rounded-none md:rounded-l-lg " src={BrandDetails.image} alt="" />
                 </div>

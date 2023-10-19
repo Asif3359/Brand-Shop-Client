@@ -21,11 +21,12 @@ const ProductCard = ({ cart, carts, setCarts }) => {
                         .then(data => {
                             console.log(data);
                             if (data.deletedCount > 0) {
-                                  swal("Poof! Your imaginary file has been deleted!", {
-                                    icon: "success",
-                                  });
                                 const remaining = carts.filter(crt => crt._id !== cart._id);
                                 setCarts(remaining);
+                                swal("Poof! Your imaginary file has been deleted!", {
+                                    icon: "success",
+                                });
+
                             }
                         })
 
