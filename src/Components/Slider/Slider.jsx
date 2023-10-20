@@ -5,8 +5,8 @@ const Slider = () => {
             <div>
                 <div className="carousel w-full h-[300px]  md:h-[60vh] lg:h-[90vh]">
                     <div id="slide1" className="carousel-item relative w-full">
-                        <div className="hero " style={{ backgroundImage: 'url(https://www.mercedes-benz.com/content/dam/brandhub/assets/innovation/concept-cars/vision-one-eleven/stage/06-2023/images/mercedes-benz-vision-111-stage-3840x2160-06-2023.cbv20230606193723.jpg/_jcr_content/renditions/mq7-original-aspect.jpeg)' }}>
-                            <div className="hero-overlay bg-opacity-50"></div>
+                        <div className="hero " style={{ backgroundImage: 'url(https://th.bing.com/th/id/R.d08df49da7cdd8bcdbbd7b66a8ccddc9?rik=UJA%2bMIH9cB%2bGcA&riu=http%3a%2f%2fhdqwalls.com%2fwallpapers%2fnissan-gtr-5k-2019-uh.jpg&ehk=KwrQdxUFA7oSpVNu%2bGd26zE4RzcK6lQzKSMWgE5q1cE%3d&risl=1&pid=ImgRaw&r=0)' }}>
+                            <div className="hero-overlay bg-opacity-70"></div>
                             <div className="  container mx-auto text-neutral-content px-12">
                                     <div className="block md:hidden text-left" >
                                         <h1 className="mb-2 lg:mb-5 text-3xl md:text-5xl font-bold">Hello there</h1>
@@ -26,8 +26,8 @@ const Slider = () => {
                         </div>
                     </div>
                     <div id="slide2" className="carousel-item relative w-full">
-                        <div className="hero " style={{ backgroundImage: 'url(https://www.mercedes-benz.com/content/dam/brandhub/assets/innovation/concept-cars/concept-cla-class/stage/09-2023/images/mercedes-benz-iaa-sc055-stage-3840x2160-09-2023.cbv20230903160535.jpg/_jcr_content/renditions/mq7-original-aspect.jpeg)' }}>
-                            <div className="hero-overlay bg-opacity-50"></div>
+                    <div className="hero " style={{ backgroundImage: 'url(https://images.pexels.com/photos/15646673/pexels-photo-15646673/free-photo-of-nissan-silvia-s14-on-drifting-on-a-track.jpeg?auto=compress&cs=tinysrgb&w=1600)' }}>
+                            <div className="hero-overlay bg-opacity-70"></div>
                             <div className="  container mx-auto text-neutral-content px-12 ">
                                 <div className=" text-left ">
                                     <div className="block md:hidden text-left" >
@@ -48,8 +48,8 @@ const Slider = () => {
                         </div>
                     </div>
                     <div id="slide3" className="carousel-item relative w-full">
-                        <div className="hero " style={{ backgroundImage: 'url(https://www.mercedes-benz.com/content/dam/brandhub/assets/vehicles/mercedes-maybach/mercedes-maybach-s-class-z223/stage/11-2020/images/mercedes-maybach-s-class-z223-stage-3400x1440-11-2020.cbv20230517105537.jpg/_jcr_content/renditions/mq7-original-aspect.jpeg)' }}>
-                            <div className="hero-overlay bg-opacity-50"></div>
+                        <div className="hero " style={{ backgroundImage: 'url(https://images.pexels.com/photos/13602150/pexels-photo-13602150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)' }}>
+                            <div className="hero-overlay bg-opacity-70"></div>
                             <div className="  container mx-auto text-neutral-content px-12 ">
                                 <div className=" text-left ">
                                     <div className="block md:hidden text-left" >
@@ -70,8 +70,8 @@ const Slider = () => {
                         </div>
                     </div>
                     <div id="slide4" className="carousel-item relative w-full">
-                        <div className="hero " style={{ backgroundImage: 'url(https://www.mercedes-benz.com/content/dam/brandhub/assets/vehicles/mercedes-maybach/mercedes-maybach-s-class-z223/stage/11-2020/images/mercedes-maybach-s-class-z223-stage-3400x1440-11-2020.cbv20230517105537.jpg/_jcr_content/renditions/mq7-original-aspect.jpeg)' }}>
-                            <div className="hero-overlay bg-opacity-50"></div>
+                        <div className="hero " style={{ backgroundImage: 'url(https://images.pexels.com/photos/17918291/pexels-photo-17918291/free-photo-of-white-tuned-nissan-gt-r.jpeg?auto=compress&cs=tinysrgb&w=1600)' }}>
+                            <div className="hero-overlay bg-opacity-70"></div>
                             <div className="  container mx-auto text-neutral-content px-12 ">
                                 <div className=" text-left ">
                                     <div className="block md:hidden text-left" >
@@ -98,7 +98,3 @@ const Slider = () => {
 };
 
 export default Slider;
-
-// https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/news/2023/10_17_autostyle/cover.jpg
-// https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/news/2023/09_14_ubisoft/ubi_cover.jpg
-// https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/news/2023/07_25_porto_cervo/cover_d.jpg
