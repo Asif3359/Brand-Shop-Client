@@ -58,7 +58,7 @@ const NavBar = () => {
         }
     </>
     return (
-        <div className=' container mx-auto'>
+        <div className=' container mx-auto py-3'>
             <div className=" flex justify-between items-center ">
                 <div className="flex justify-between items-center w-full lg:w-fit flex-1">
                     <div className="flex-1 justify-start ">
@@ -68,7 +68,7 @@ const NavBar = () => {
                         <label tabIndex={0} className="btn btn-sm btn-ghost ">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content z-20 top-8  p-2 shadow bg-green-400 rounded-box space-y-1">
+                        <ul tabIndex={0} className="menu menu-sm dropdown-content z-20 top-8  p-2 bg-gray-600  rounded-box space-y-1">
                             {links1}
                         </ul>
                     </div>
