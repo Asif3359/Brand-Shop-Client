@@ -14,7 +14,7 @@ const BrandItem = () => {
 
     useEffect(() => {
 
-        fetch('/public/Brands.json')
+        fetch('/Brands.json')
             .then(res => res.json())
             .then(data => {
                 const brandSelect = data.find(brand => brand.id == id);

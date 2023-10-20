@@ -51,7 +51,7 @@ const Register = () => {
                     photoURL:Photo
                 }
                 console.log(ourUsr);
-                fetch('http://localhost:5000/users', {
+                fetch('https://brand-server-6p01ecrdb-asif-ahammeds-projects.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

@@ -30,7 +30,7 @@ const router = createBrowserRouter([
         {
           path: "/brands/:id",
           element: <PrivateRout><BrandItem></BrandItem></PrivateRout>,
-          loader : ()=>fetch('http://localhost:5000/product')
+          loader : ()=>fetch('https://brand-server-6p01ecrdb-asif-ahammeds-projects.vercel.app/product')
         },
         {
           path: "/myCart",
@@ -40,12 +40,12 @@ const router = createBrowserRouter([
         {
           path: "/details/:id",
           element: <PrivateRout><ProductDetails></ProductDetails></PrivateRout>,
-          loader : ({params})=>fetch(`http://localhost:5000/product/${params.id}`)
+          loader : ({params})=>fetch(`https://brand-server-6p01ecrdb-asif-ahammeds-projects.vercel.app/product/${params.id}`)
         },
         {
           path: "/update/:id",
           element: <PrivateRout><UpdatePage></UpdatePage></PrivateRout>,
-          loader : ({params})=>fetch(`http://localhost:5000/product/${params.id}`)
+          loader : ({params})=>fetch(`https://brand-server-6p01ecrdb-asif-ahammeds-projects.vercel.app/product/${params.id}`)
         },
         {
           path: "/profile",
