@@ -9,7 +9,9 @@ function App() {
     <div className=''>
       <div className=''>
         <div className="hero-overlay bg-opacity-60"></div>
-        <NavBar></NavBar>
+        <div className='px-2 md:px-2 lg:px-2'>
+          <NavBar></NavBar>
+        </div>
 
       </div>
       <div className='px-2'>
