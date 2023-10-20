@@ -30,8 +30,7 @@
 <br>
 <h4>Details Product</h4>
 <ul>
-    <li>
-    </li>
+    <li>Clicking on the details button will show another page detailing the product. There will be add to court button. By clicking on the Add to Card button, that product will be stored on the My Cart page</li>
 </ul>
 <br>
 <h4>Add to cart</h4>
