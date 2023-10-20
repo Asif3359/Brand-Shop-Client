@@ -42,7 +42,7 @@ const BrandItem = () => {
                         <div className="carousel w-full h-[60vh] lg:h-[90vh]">
                             <div id="slide1" className="carousel-item relative w-full">
                                 <div className="hero bg-opacity-50 bg-center bg-cover " style={{ backgroundImage: `url(${brands[0]?.image})` }}>
-                                    <div className="hero-overlay bg-opacity-30"></div>
+                                    <div className="hero-overlay bg-opacity-70"></div>
                                     <div className="  container mx-auto text-neutral-content px-12">
                                         <div className="block md:hidden text-left" >
                                             <h1 className="mb-2 lg:mb-5 text-3xl md:text-5xl font-bold">Hello there</h1>
@@ -63,7 +63,7 @@ const BrandItem = () => {
                             </div>
                             <div id="slide2" className="carousel-item relative w-full">
                                 <div className="hero " style={{ backgroundImage: `url(${brands[1]?.image})` }}>
-                                    <div className="hero-overlay bg-opacity-30"></div>
+                                    <div className="hero-overlay bg-opacity-70"></div>
                                     <div className="  container mx-auto text-neutral-content px-12">
                                         <div className="block md:hidden text-left" >
                                             <h1 className="mb-2 lg:mb-5 text-3xl md:text-5xl font-bold">Hello there</h1>
@@ -84,7 +84,7 @@ const BrandItem = () => {
                             </div>
                             <div id="slide3" className="carousel-item relative w-full">
                                 <div className="hero " style={{ backgroundImage: `url(${brands[2]?.image})` }}>
-                                    <div className="hero-overlay bg-opacity-30"></div>
+                                    <div className="hero-overlay bg-opacity-70"></div>
                                     <div className="  container mx-auto text-neutral-content px-12">
                                         <div className="block md:hidden text-left" >
                                             <h1 className="mb-2 lg:mb-5 text-3xl md:text-5xl font-bold">Hello there</h1>
