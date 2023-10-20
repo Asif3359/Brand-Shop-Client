@@ -8,6 +8,10 @@
     <h4>Navbar</h4>
     <li>My Cart</li>
     <li>Add Cart</li>
+    <li>Profile</li>
+    <li>login</li>
+    <li>logout</li>
+    <li>toggle Button</li>
     </ul>
 </ul>
 <br>
