@@ -12,7 +12,7 @@ function App() {
         <NavBar></NavBar>
 
       </div>
-      <div className=''>
+      <div className='px-2'>
         <Outlet></Outlet>
       </div>
       <div>
