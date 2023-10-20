@@ -1,6 +1,6 @@
 # Assignment 10 Brand Server 
 
-live Link :<a href="https://brand-client.web.app/"></a>
+[Visit my Live Link](https://brand-client.web.app/)
 
 <h4>Home Page </h4>
 <ul>
