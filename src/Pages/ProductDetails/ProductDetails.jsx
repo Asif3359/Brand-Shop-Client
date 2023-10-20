@@ -57,8 +57,8 @@ const ProductDetails = () => {
                     <h5 className="mb-2 text-2xl font-bold tracking-tight ">{BrandDetails.name}</h5>
                     <h5 className="mb-2 text-xl font-bold tracking-tight ">{BrandDetails.brandName}</h5>
                     <h5 className="mb-2  font-bold tracking-tight ">{BrandDetails.type}</h5>
-                    <h5 className="mb-2  font-bold tracking-tight ">{BrandDetails.price}</h5>
-                    <h5 className="mb-2  font-bold tracking-tight ">{BrandDetails.rating}</h5>
+                    <h5 className="mb-2  font-bold tracking-tight ">Price: {BrandDetails.price}</h5>
+                    <h5 className="mb-2  font-bold tracking-tight ">Rating: {BrandDetails.rating}</h5>
                     <p className="mb-3 font-normal  ">{BrandDetails.description}</p>
                     <button onClick={handleAddCart} className='btn btn-sm btn-primary'>Add To Cart</button>
                 </div>

@@ -10,14 +10,19 @@ const Cart = ({ brand }) => {
                 <div className=" p-2 shadow-none">
                     <h2 className="card-title">{brand.name}</h2>
                     <h2 className="card-title">{brand.brandName}</h2>
-                    <p>{brand.description.slice(0,20)} <Link to={`/details/${brand._id}`} className="">...See more</Link></p>
-                    <div className="rating rating-sm">
-                        <input type="radio" name="rating-9" className="rating-hidden" />
-                        <input type="radio" name="rating-9" className="mask mask-star-2" />
-                        <input type="radio" name="rating-9" className="mask mask-star-2" defaultChecked />
-                        <input type="radio" name="rating-9" className="mask mask-star-2" />
-                        <input type="radio" name="rating-9" className="mask mask-star-2" />
-                        <input type="radio" name="rating-9" className="mask mask-star-2" />
+                    <p>{brand.description.slice(0, 20)} <Link to={`/details/${brand._id}`} className="">...See more</Link></p>
+                    <div className='flex gap-3 items-center'>
+                        <div className="rating rating-sm">
+                            <input type="radio" name="rating-9" className="rating-hidden" />
+                            <input type="radio" name="rating-9" className="mask mask-star-2" />
+                            <input type="radio" name="rating-9" className="mask mask-star-2" defaultChecked />
+                            <input type="radio" name="rating-9" className="mask mask-star-2" />
+                            <input type="radio" name="rating-9" className="mask mask-star-2" />
+                            <input type="radio" name="rating-9" className="mask mask-star-2" />
+                        </div>
+                        <div>
+                            <h1>{brand.rating}</h1>
+                        </div>
                     </div>
                     <div className="card-actions flex justify-between items-center ">
                         <h4 className='font-bold'>{brand.price}</h4>
