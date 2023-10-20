@@ -1,7 +1,10 @@
 import React from 'react';
+import { useContext } from 'react';
 import swal from 'sweetalert';
+import { AuthContext } from '../../AuthProviders/AuthProvider';
 
-const ProductCard = ({ cart, carts, setCarts }) => {
+const ProductCard = ({ cart, userCarts, setUserCarts }) => {
+    const {user}=useContext(AuthContext);
     console.log(cart._id)
     const handleDelete = () => {
         swal({
@@ -21,8 +24,10 @@ const ProductCard = ({ cart, carts, setCarts }) => {
                         .then(data => {
                             console.log(data);
                             if (data.deletedCount > 0) {
-                                const remaining = carts.filter(crt => crt._id !== cart._id);
-                                setCarts(remaining);
+
+                                const addedUserCarts = userCarts.filter(crt => crt.email == user.email);
+                                const remaining = addedUserCarts.filter(crt => crt._id !== cart._id);
+                                setUserCarts(remaining);
                                 swal("Poof! Your imaginary file has been deleted!", {
                                     icon: "success",
                                 });
@@ -38,7 +43,7 @@ const ProductCard = ({ cart, carts, setCarts }) => {
     return (
         <div>
             <div className="card card-compact bg-base-100 border ">
-                <figure><img className='w-full h-[300px] transition  duration-300 ease-in-out hover:scale-110' src={cart.image} alt="Shoes" /></figure>
+                <figure><img className='w-full h-[250px] transition  duration-300 ease-in-out hover:scale-110' src={cart.image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{cart.name}</h2>
                     <p>{cart.description.slice(0, 50)}</p>

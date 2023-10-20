@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <div className=''>
-      <div className='bg-[#b64930]'>
+      <div className=''>
         <div className="hero-overlay bg-opacity-60"></div>
         <NavBar></NavBar>
 

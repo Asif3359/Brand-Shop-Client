@@ -26,18 +26,18 @@ const NavBar = () => {
             });
     }
     const links1 = <>
-        <li className="text-bold"><NavLink to="/" className='text-white no-underline'>Home</NavLink></li>
-        <li className="text-bold"><NavLink to="/myCart" className='text-white no-underline'>My Cart</NavLink></li>
-        <li><NavLink to="/addProduct" className='text-white  no-underline '>Add Product</NavLink></li>
+        <li className="text-bold"><NavLink to="/" className=' no-underline'>Home</NavLink></li>
+        <li className="text-bold"><NavLink to="/myCart" className=' no-underline'>My Cart</NavLink></li>
+        <li><NavLink to="/addProduct" className='  no-underline '>Add Product</NavLink></li>
         <li><NavLink to="/profile" className=' no-underline p-1 rounded-full '>
             {
-                user &&
+                user?.photoURL &&
                 <>
                     <img className="rounded-full w-10 " src={user?.photoURL} alt="" />
                 </>
             }
             {
-                !user &&
+                !user?.photoURL &&
                 <>
                     <span className="rounded-full  text-gray-800 text-4xl "><FaUserCircle></FaUserCircle></span>
                 </>
@@ -46,23 +46,23 @@ const NavBar = () => {
         {
             !user &&
             <>
-                <li><NavLink to="/login" className='text-white no-underline'>login</NavLink></li>
+                <li><NavLink to="/login" className=' no-underline'>login</NavLink></li>
             </>
         }
-        {/* <li><NavLink to="/register" className='text-white no-underline'>register</NavLink></li> */}
+        {/* <li><NavLink to="/register" className=' no-underline'>register</NavLink></li> */}
         {
             user &&
             <>
-                <li><button className='text-white no-underline' onClick={() => userLogOut(logOut)}>logout</button></li>
+                <li><button className=' no-underline' onClick={() => userLogOut(logOut)}>logout</button></li>
             </>
         }
     </>
     return (
-        <div className='text-white container mx-auto'>
+        <div className=' container mx-auto'>
             <div className=" flex justify-between items-center ">
                 <div className="flex justify-between items-center w-full lg:w-fit flex-1">
                     <div className="flex-1 justify-start ">
-                        <NavLink to="/" className=' font-bold normal-case text-xl text-white no-underline' >daisyUI</NavLink>
+                        <NavLink to="/" className=' font-bold normal-case text-xl  no-underline' >daisyUI</NavLink>
                     </div>
                     <div className="dropdown flex flex-1 justify-end  md:hidden">
                         <label tabIndex={0} className="btn btn-sm btn-ghost ">

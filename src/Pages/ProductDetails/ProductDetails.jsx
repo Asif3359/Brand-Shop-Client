@@ -1,10 +1,15 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useContext } from 'react';
+import { useLoaderData, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { AuthContext } from '../../AuthProviders/AuthProvider';
 
 const ProductDetails = () => {
+    const {user}=useContext(AuthContext);
     const BrandDetails = useLoaderData();
-    
+    const navigate = useNavigate();
     const Cart = {
+        email:user.email,
         image:BrandDetails.image,
         name:BrandDetails.name,
         brandName:BrandDetails.brandName,
@@ -26,6 +31,17 @@ const ProductDetails = () => {
                 console.log(data);
                 if (data.acknowledged) {
                     console.log(data.acknowledged);
+                    toast.success('Product Added Successfully', {
+                        position: "top-right",
+                        autoClose: 1500,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                        });
+                        navigate(-1);
                 }
             })
 

@@ -1,23 +1,135 @@
-import React, { useContext } from 'react';
-import {Link, useLocation, useNavigate} from "react-router-dom"
+import React, { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProviders/AuthProvider';
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Register = () => {
-    const navigate = useNavigate();
-    const {socialLogIn} = useContext(AuthContext);
-    const location = useLocation();
 
-    const handleSocialLogin = (social) =>{
-        social()
-            .then(result =>{
+    const [registerSuccessMessage, setRegisterSuccessMessage] = useState(null);
+    const [registerErrorMessage, setRegisterErrorMessage] = useState(null);
+
+    const { createUser, socialLogIn, profile } = useContext(AuthContext)
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const handleRegister = (e) => {
+        e.preventDefault()
+        const Name = e.target.name.value;
+        const Email = e.target.email.value;
+        const Photo = e.target.photo.value;
+        const Password = e.target.password.value;
+        console.log(Name, Email, Photo, Password);
+        if (Password.length < 6) {
+            setRegisterErrorMessage("password is less than 6 characters")
+            return;
+        }
+        // if(/^(?=.*[a-z])/.test(Password)){
+        //     return setRegisterErrorMessage("don't have a capital letter")
+        // }
+        if (!/[A-Z]/.test(Password)) {
+            return setRegisterErrorMessage("don't have a capital letter")
+        }
+        if (!/[@#$%^&!]/.test(Password)) {
+            return setRegisterErrorMessage(" don't have a special character")
+        }
+        createUser(Email, Password)
+            .then(result => {
+                profile(Name, Photo)
+                    .then(result => {
+                        const user = result.user;
+                    })
+                    .catch(error => {
+                        const errorCode = error.code;
+                        console.log(errorCode);
+                    })
                 const user = result.user;
                 console.log(user);
+                const ourUsr = {
+                    email: user.email,
+                    lastLogAt: user.metadata?.lastSignInTime,
+                    displayName: Name,
+                    photoURL:Photo
+                }
+                console.log(ourUsr);
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(ourUsr)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        navigate("/");
+                        console.log(data.acknowledged);
+                    })
+                setRegisterSuccessMessage("User Successfully register ");
+                navigate(location?.state ? location.state : "/")
+                toast.success('User Successfully register', {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+
+            })
+            .catch(error => {
+                setRegisterErrorMessage(error.message);
+                toast.error('User could not register successfully', {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+            })
+
+    }
+    const socialLoginWith = (googleLogIn) => {
+        setRegisterSuccessMessage("");
+        setRegisterErrorMessage("");
+
+        googleLogIn()
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                setRegisterSuccessMessage("User Successfully login ");
                 navigate(location?.state ? location.state : "/");
-            } )
-            .catch(error =>{
+                toast.success('User Successfully login', {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+            })
+            .catch(error => {
                 console.log(error.message);
+                setRegisterErrorMessage(error.message);
+                toast.error('User could not login successfully', {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
             })
     }
+
     return (
         <div>
             <section className="bg-gray-50 dark:bg-gray-900">
@@ -27,7 +139,7 @@ const Register = () => {
                             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                                 Register
                             </h1>
-                            <form className="space-y-2 md:space-y-3 mt-5 mb-3" action="#">
+                            <form onSubmit={handleRegister} className="space-y-2 md:space-y-3 mt-5 mb-3" action="#">
                                 <div>
                                     <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your name</label>
                                     <input type="text" name="name" id="name" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="full name" required />
@@ -63,17 +175,21 @@ const Register = () => {
                                 <h1 className=''>Login WIth</h1>
                                 <div className='border'></div>
                                 <div className='flex justify-start item-center'>
-                                    <button onClick={()=>handleSocialLogin(socialLogIn)}  className='btn btn-sm '>Google</button>
+                                    <button onClick={() => socialLoginWith(socialLogIn)} className='btn btn-sm '>Google</button>
                                 </div>
                             </div>
                             {
+                                registerSuccessMessage
+                                &&
                                 <div className='py-1'>
-                                    <p className='text-green-500'></p>
+                                    <p className='text-green-500'>{registerSuccessMessage}</p>
                                 </div>
                             }
                             {
+                                registerErrorMessage
+                                &&
                                 <div>
-                                    <p className='text-red-500'></p>
+                                    <p className='text-red-500'>{registerErrorMessage}</p>
                                 </div>
                             }
                         </div>
