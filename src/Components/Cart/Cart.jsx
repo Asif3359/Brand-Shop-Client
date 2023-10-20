@@ -6,7 +6,7 @@ const Cart = ({ brand }) => {
     return (
         <div>
             <div className="w-full lg:card-side bg-base-100 border  transition delay-150 duration-300 ease-in-out rounded-lg">
-                <figure><img className='w-full h-[150px] md:h-[200px] lg:h-[250px] rounded-lg transition delay-150 duration-300 ease-in-out hover:scale-110' src={brand.image} alt="Album" /></figure>
+                <figure><img className='w-full h-[200px] md:h-[250px] lg:h-[300px] rounded-lg transition delay-150 duration-300 ease-in-out hover:scale-110' src={brand.image} alt="Album" /></figure>
                 <div className=" p-2 shadow-none">
                     <h2 className="card-title">{brand.name}</h2>
                     <h2 className="card-title">{brand.brandName}</h2>
