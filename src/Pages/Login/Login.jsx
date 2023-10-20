@@ -34,7 +34,7 @@ const Login = () => {
                     .then(res => res.json())
                     .then(data => {
                         console.log(data);
-                        navigate("/");
+                        navigate(location?.state ? location.state : "/");
                         console.log(data.acknowledged);
                     })
                 setLoginSuccessMessage("User Successfully logged in ");

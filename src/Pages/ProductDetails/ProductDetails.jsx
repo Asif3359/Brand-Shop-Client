@@ -54,12 +54,12 @@ const ProductDetails = () => {
                     <img className=" h-[50vh] md:h-[80vh] w-full  " src={BrandDetails.image} alt="" />
                 </div>
                 <div className=" p-2">
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight  dark:text-white">{BrandDetails.name}</h5>
-                    <h5 className="mb-2 text-xl font-bold tracking-tight  dark:text-white">{BrandDetails.brandName}</h5>
-                    <h5 className="mb-2  font-bold tracking-tight  dark:text-white">{BrandDetails.type}</h5>
-                    <h5 className="mb-2  font-bold tracking-tight  dark:text-white">{BrandDetails.price}</h5>
-                    <h5 className="mb-2  font-bold tracking-tight  dark:text-white">{BrandDetails.rating}</h5>
-                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{BrandDetails.description}</p>
+                    <h5 className="mb-2 text-2xl font-bold tracking-tight ">{BrandDetails.name}</h5>
+                    <h5 className="mb-2 text-xl font-bold tracking-tight ">{BrandDetails.brandName}</h5>
+                    <h5 className="mb-2  font-bold tracking-tight ">{BrandDetails.type}</h5>
+                    <h5 className="mb-2  font-bold tracking-tight ">{BrandDetails.price}</h5>
+                    <h5 className="mb-2  font-bold tracking-tight ">{BrandDetails.rating}</h5>
+                    <p className="mb-3 font-normal  ">{BrandDetails.description}</p>
                     <button onClick={handleAddCart} className='btn btn-sm btn-primary'>Add To Cart</button>
                 </div>
             </div>

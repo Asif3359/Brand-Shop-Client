@@ -61,7 +61,7 @@ const Register = () => {
                     .then(res => res.json())
                     .then(data => {
                         console.log(data);
-                        navigate("/");
+                        navigate(location?.state ? location.state : "/");
                         console.log(data.acknowledged);
                     })
                 setRegisterSuccessMessage("User Successfully register ");
