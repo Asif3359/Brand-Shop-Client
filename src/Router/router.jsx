@@ -30,22 +30,22 @@ const router = createBrowserRouter([
         {
           path: "/brands/:id",
           element: <PrivateRout><BrandItem></BrandItem></PrivateRout>,
-          loader : ()=>fetch('https://brand-server-6p01ecrdb-asif-ahammeds-projects.vercel.app/product')
+          loader : ()=>fetch('https://brand-server-qkmss9522-asif-ahammeds-projects.vercel.app/product')
         },
         {
           path: "/myCart",
           element: <PrivateRout><MyCart></MyCart></PrivateRout>,
-          loader : ()=>fetch('https://brand-server-6p01ecrdb-asif-ahammeds-projects.vercel.app/carts')
+          loader : ()=>fetch('https://brand-server-qkmss9522-asif-ahammeds-projects.vercel.app/carts')
         },
         {
           path: "/details/:id",
           element: <PrivateRout><ProductDetails></ProductDetails></PrivateRout>,
-          loader : ({params})=>fetch(`https://brand-server-6p01ecrdb-asif-ahammeds-projects.vercel.app/product/${params.id}`)
+          loader : ({params})=>fetch(`https://brand-server-qkmss9522-asif-ahammeds-projects.vercel.app/product/${params.id}`)
         },
         {
           path: "/update/:id",
           element: <PrivateRout><UpdatePage></UpdatePage></PrivateRout>,
-          loader : ({params})=>fetch(`https://brand-server-6p01ecrdb-asif-ahammeds-projects.vercel.app/product/${params.id}`)
+          loader : ({params})=>fetch(`https://brand-server-qkmss9522-asif-ahammeds-projects.vercel.app/product/${params.id}`)
         },
         {
           path: "/profile",

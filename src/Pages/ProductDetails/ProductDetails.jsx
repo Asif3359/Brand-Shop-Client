@@ -19,7 +19,7 @@ const ProductDetails = () => {
         description:BrandDetails.description,
     }
     const handleAddCart = () => {
-        fetch('https://brand-server-6p01ecrdb-asif-ahammeds-projects.vercel.app/carts', {
+        fetch('https://brand-server-qkmss9522-asif-ahammeds-projects.vercel.app/carts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

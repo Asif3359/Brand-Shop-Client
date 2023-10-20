@@ -23,7 +23,7 @@ const AddProduct = () => {
             name, brandName, type, image, price, description, rating
         }
         
-        fetch('https://brand-server-6p01ecrdb-asif-ahammeds-projects.vercel.app/product', {
+        fetch('https://brand-server-qkmss9522-asif-ahammeds-projects.vercel.app/product', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

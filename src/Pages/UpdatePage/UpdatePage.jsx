@@ -29,7 +29,7 @@ const UpdatePage = () => {
             description,
             rating
         }
-        fetch(`https://brand-server-6p01ecrdb-asif-ahammeds-projects.vercel.app/product/${_id}`, {
+        fetch(`https://brand-server-qkmss9522-asif-ahammeds-projects.vercel.app/product/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

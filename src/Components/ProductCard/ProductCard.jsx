@@ -17,7 +17,7 @@ const ProductCard = ({ cart, userCarts, setUserCarts }) => {
             .then((willDelete) => {
                 if (willDelete) {
 
-                    fetch(`https://brand-server-6p01ecrdb-asif-ahammeds-projects.vercel.app/carts/${cart._id}`, {
+                    fetch(`https://brand-server-qkmss9522-asif-ahammeds-projects.vercel.app/carts/${cart._id}`, {
                         method: "DELETE"
                     })
                         .then(res => res.json())

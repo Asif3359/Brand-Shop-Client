@@ -48,10 +48,10 @@ const Register = () => {
                     email: user.email,
                     lastLogAt: user.metadata?.lastSignInTime,
                     displayName: Name,
-                    photoURL:Photo
+                    photoURL: Photo
                 }
                 console.log(ourUsr);
-                fetch('https://brand-server-6p01ecrdb-asif-ahammeds-projects.vercel.app/users', {
+                fetch('https://brand-server-qkmss9522-asif-ahammeds-projects.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -101,6 +101,24 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                const ourUsr = {
+                    email: user.email,
+                    lastLogAt: user.metadata?.lastSignInTime,
+                    displayName: user.displayName,
+                }
+                fetch('https://brand-server-qkmss9522-asif-ahammeds-projects.vercel.app/users', {
+                    method: 'PATCH',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(ourUsr)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        navigate(location?.state ? location.state : "/");
+                        console.log(data.acknowledged);
+                    })
                 setRegisterSuccessMessage("User Successfully login ");
                 navigate(location?.state ? location.state : "/");
                 toast.success('User Successfully login', {
