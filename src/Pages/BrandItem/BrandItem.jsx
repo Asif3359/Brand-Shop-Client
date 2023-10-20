@@ -106,8 +106,8 @@ const BrandItem = () => {
                         </div>
                     </div> :
                     <div className='flex justify-center items-center h-[70vh]'>
-                        <p>sorry!</p>
-                        <h1>Product of this brand is not available now!</h1>
+                        <p></p>
+                        <h1>sorry! Product of this brand is not available now!</h1>
                     </div>
             }
         </div>
