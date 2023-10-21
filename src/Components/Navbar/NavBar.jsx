@@ -4,20 +4,19 @@ import { AuthContext } from "../../AuthProviders/AuthProvider";
 import { FaUserCircle } from "react-icons/fa";
 
 const NavBar = () => {
-    const [theme, setThem] = useState(localStorage.getItem('theme')?localStorage.getItem('theme'):"light");
+    const [theme, setThem] = useState(localStorage.getItem('theme') ? localStorage.getItem('theme') : "light");
     const { user, logOut } = useContext(AuthContext);
 
-    useEffect(()=>{
-        localStorage.setItem("theme",theme);
+    useEffect(() => {
+        localStorage.setItem("theme", theme);
         const localTheme = localStorage.getItem("theme");
-        document.querySelector("html").setAttribute("data-theme",localTheme);
-    },[theme]);
+        document.querySelector("html").setAttribute("data-theme", localTheme);
+    }, [theme]);
 
-    const handleToggle =(e)=>{
-        if(e.target.checked)
-        {
+    const handleToggle = (e) => {
+        if (e.target.checked) {
             setThem("dark");
-        }else{
+        } else {
             setThem("light")
         }
     }
@@ -78,11 +77,16 @@ const NavBar = () => {
             <div className=" flex justify-between items-center ">
                 <div className="flex justify-between items-center w-full lg:w-fit flex-1">
                     <div className="flex-1 justify-start ">
-                        <NavLink to="/" className=' font-bold normal-case text-xl  no-underline' ><h2 className="text-bold text-4xl">AA<sub>3</sub></h2></NavLink>
+                        <NavLink to="/" className=' font-bold normal-case text-xl  no-underline' >
+                            <div className="flex items-center gap-1">
+                                <img src="/AA3.jpeg " className=" w-10 h-10  rounded-full" alt="" />
+                                <h2 className="text-bold text-4xl">AA<sub>3</sub></h2>
+                            </div>
+                        </NavLink>
                     </div>
                     <div className="dropdown flex flex-1 justify-end  md:hidden">
                         <label tabIndex={0} className="btn btn-sm btn-ghost ">
-                            <svg  xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content z-20 top-8  p-2 bg-gray-600 dark:text-gray-50  rounded-box space-y-1">
                             {links1}
@@ -96,8 +100,8 @@ const NavBar = () => {
                     <label className="swap swap-rotate">
 
                         {/* this hidden checkbox controls the state */}
-                        <input onChange={handleToggle} type="checkbox" 
-                        checked={theme==="light"?false:true}
+                        <input onChange={handleToggle} type="checkbox"
+                            checked={theme === "light" ? false : true}
                         />
 
                         {/* sun icon */}

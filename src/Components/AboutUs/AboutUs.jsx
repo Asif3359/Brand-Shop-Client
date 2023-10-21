@@ -6,9 +6,9 @@ const AboutUs = () => {
             <div>
                 <h1 className='text-center text-4xl font-bold'>About Us</h1>
                 <div className='p-4 text-center w-full lg:w-4/5 mx-auto'>
-                    <p>Corporate Nexus Events Event - Your Premier Event Management Partner
+                    <p>AA<sub>3</sub> - your Dream Partner
 
-                        At Corporate Nexus Events Event, we are passionate about creating unforgettable experiences. With XyZ Event years of experience in the event management industry, we have established ourselves as a trusted partner for individuals and businesses seeking to host extraordinary events.</p>
+                        At AA<sub>3</sub>, we are dedicated to crafting unforgettable experiences. With years of expertise in the automotive industry, we have solidified our position as a reliable partner for individuals and businesses looking to host remarkable automotive events.</p>
                 </div>
                 <div className='flex flex-col lg:flex-row gap-5 justify-between items-center mt-5 p-2 lg:p-10 '>
                     <div className='flex-1' data-aos="fade-right">
@@ -19,7 +19,7 @@ const AboutUs = () => {
                             <h1 className='font-bold text-3xl'>Our Mission</h1>
                         </div>
                         <div className='mt-5 w-full'>
-                            <p> At the heart of our mission is the commitment to turning your vision into reality. We believe that every event is unique, and we strive to bring creativity, precision, and a personal touch to each project we undertake.</p>
+                            <p> Central to our mission at AA<sub>3</sub> is our unwavering commitment to transforming your automotive dreams into reality. We understand that every automotive event is a one-of-a-kind experience, and our goal is to infuse each project with creativity, precision, and a personal touch that sets it apart from the rest.</p>
                         </div>
                     </div>
                 </div>
