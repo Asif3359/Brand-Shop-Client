@@ -2,10 +2,11 @@ import React from 'react';
 import { useContext } from 'react';
 import swal from 'sweetalert';
 import { AuthContext } from '../../AuthProviders/AuthProvider';
+import { useNavigate } from 'react-router-dom';
 
 const ProductCard = ({ cart, userCarts, setUserCarts }) => {
     const {user}=useContext(AuthContext);
-    console.log(cart._id)
+    const navigate = useNavigate()
     const handleDelete = () => {
         swal({
             title: "Are you sure?",
@@ -28,7 +29,13 @@ const ProductCard = ({ cart, userCarts, setUserCarts }) => {
                                 const addedUserCarts = userCarts.filter(crt => crt.email == user.email);
                                 const remaining = addedUserCarts.filter(crt => crt._id !== cart._id);
                                 setUserCarts(remaining);
-                                swal("Poof! Your imaginary file has been deleted!", {
+                               
+                                if(remaining.length==0)
+                                {
+                                    window.location.reload();
+                                    // navigate("/myCart");
+                                }
+                                swal("Poof! Your imaginary card has been deleted!", {
                                     icon: "success",
                                 });
 
@@ -36,7 +43,7 @@ const ProductCard = ({ cart, userCarts, setUserCarts }) => {
                         })
 
                 } else {
-                    swal("Your imaginary file is safe!");
+                    swal("Your imaginary card is safe!");
                 }
             });
     }
