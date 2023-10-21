@@ -23,11 +23,11 @@ const BrandItem = () => {
                 const brandSelect = data.find(brand => brand.id == id);
 
                 const BrandsToShow = allBrands.filter(brand => brand.brandName.toLowerCase() == brandSelect.brandName.toLowerCase());
-                
+
                 if (BrandsToShow.length == 0) {
                     setLoading(true);
                     setLength(false);
-                }else{
+                } else {
                     setLoading(false);
                     setLength(true);
                     setBrands(BrandsToShow);
@@ -39,8 +39,10 @@ const BrandItem = () => {
     }, [id])
     return (
         <div>
-            <LoadingRoute loading={loading} length={length}>
-                <div>
+            {/* <LoadingRoute loading={loading} length={length}> */}
+            {
+                length ? <>
+                    <div>
                         <div className=''>
                             <div className="carousel w-full h-[60vh] lg:h-[90vh]">
                                 <div id="slide1" className="carousel-item relative w-full">
@@ -115,8 +117,15 @@ const BrandItem = () => {
                                 }
                             </div>
                         </div>
-                    </div> 
-            </LoadingRoute>
+                    </div>
+                </> : <>
+                <div className='text-center flex items-center justify-center h-[90vh]'>
+                    <h1>This brand product is not available now!</h1>
+                </div>
+                </>
+            }
+
+            {/* </LoadingRoute> */}
         </div>
     );
 };

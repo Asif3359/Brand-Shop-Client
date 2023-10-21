@@ -6,9 +6,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
-    <div className=''>
-      <div className=''>
-        <div className="hero-overlay bg-opacity-60"></div>
+    <div>
+      <div>
         <div className='px-2 md:px-2 lg:px-2'>
           <NavBar></NavBar>
         </div>

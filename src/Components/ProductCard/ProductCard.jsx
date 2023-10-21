@@ -5,7 +5,7 @@ import { AuthContext } from '../../AuthProviders/AuthProvider';
 import { useNavigate } from 'react-router-dom';
 
 const ProductCard = ({ cart, userCarts, setUserCarts }) => {
-    const {user}=useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     const navigate = useNavigate()
     const handleDelete = () => {
         swal({
@@ -29,15 +29,13 @@ const ProductCard = ({ cart, userCarts, setUserCarts }) => {
                                 const addedUserCarts = userCarts.filter(crt => crt.email == user.email);
                                 const remaining = addedUserCarts.filter(crt => crt._id !== cart._id);
                                 setUserCarts(remaining);
-                               
-                                if(remaining.length==0)
-                                {
-                                    window.location.reload();
-                                    // navigate("/myCart");
-                                }
                                 swal("Poof! Your imaginary card has been deleted!", {
                                     icon: "success",
                                 });
+                                if (remaining.length == 0) {
+                                    window.location.reload();
+                                    // navigate("/myCart");
+                                }
 
                             }
                         })

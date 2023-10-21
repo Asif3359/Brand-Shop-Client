@@ -1,6 +1,6 @@
 import React from 'react';
 
-const LoadingRoute = ({ children, loading, }) => {
+const LoadingRoute = ({ children, loading, length }) => {
 
     if (loading && !length) {
         return (
@@ -18,11 +18,20 @@ const LoadingRoute = ({ children, loading, }) => {
         );
     }
     if (!length) {
-        return (
-            children
-        );
+        return children;
     }
 
 };
 
 export default LoadingRoute;
+
+// import React from 'react';
+// import { Children } from 'react';
+
+// const LoadingRoute = () => {
+
+
+//     return ();
+// };
+
+// export default LoadingRoute;
