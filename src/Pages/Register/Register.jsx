@@ -51,7 +51,7 @@ const Register = () => {
                     photoURL: Photo
                 }
                 console.log(ourUsr);
-                fetch('https://brand-server-qkmss9522-asif-ahammeds-projects.vercel.app/users', {
+                fetch('https://brand-server-asif-ahammeds-projects.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -106,7 +106,7 @@ const Register = () => {
                     lastLogAt: user.metadata?.lastSignInTime,
                     displayName: user.displayName,
                 }
-                fetch('https://brand-server-qkmss9522-asif-ahammeds-projects.vercel.app/users', {
+                fetch('https://brand-server-asif-ahammeds-projects.vercel.app/users', {
                     method: 'PATCH',
                     headers: {
                         'content-type': 'application/json'

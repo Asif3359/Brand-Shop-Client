@@ -4,7 +4,6 @@ import { AuthContext } from '../../AuthProviders/AuthProvider';
 import Brands from '../Brands/Brands';
 import AboutUs from '../AboutUs/AboutUs';
 import UserComments from '../UserComments/UserComments';
-import UserQuestion from '../UsersQuestion/UserQuestion';
 import Statistics from '../Statistics/Statistics';
 
 const Home = () => {
@@ -22,7 +21,6 @@ const Home = () => {
                 <div>
                     <UserComments></UserComments>
                 </div>
-
                 <div>
                     <Statistics></Statistics>
                 </div>
