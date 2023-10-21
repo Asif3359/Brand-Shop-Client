@@ -4,6 +4,7 @@ import { AuthContext } from "../../AuthProviders/AuthProvider";
 import { FaUserCircle } from "react-icons/fa";
 
 const NavBar = () => {
+    const [brands , setBrands]=useState([]);
     const [theme, setThem] = useState(localStorage.getItem('theme') ? localStorage.getItem('theme') : "light");
     const { user, logOut } = useContext(AuthContext);
 
@@ -11,6 +12,10 @@ const NavBar = () => {
         localStorage.setItem("theme", theme);
         const localTheme = localStorage.getItem("theme");
         document.querySelector("html").setAttribute("data-theme", localTheme);
+
+        fetch("/Brands.json")
+        .then(res=>res.json())
+        .then(data =>setBrands(data))
     }, [theme]);
 
     const handleToggle = (e) => {
@@ -44,6 +49,20 @@ const NavBar = () => {
         <li className="text-bold"><NavLink to="/" className=' no-underline'>Home</NavLink></li>
         <li className="text-bold"><NavLink to="/myCart" className=' no-underline'>My Cart</NavLink></li>
         <li><NavLink to="/addProduct" className='  no-underline '>Add Product</NavLink></li>
+        <ul className=" relative  rounded-box">
+            <li>
+                <details >
+                    <summary>Brands</summary>
+                    <ul className=" bg-base-100 rounded-lg m-0 p-2 w-40 lg:absolute right-0 md:top-10 z-50 ">
+                        <li className="wr-3">
+                            {
+                                brands.map( brand => <NavLink to={`/brands/${brand.id}`} key={brand.id}>{brand.brandName}</NavLink>)
+                            }
+                        </li>
+                    </ul>
+                </details>
+            </li>
+        </ul>
         <li><NavLink to="/profile" className=' no-underline p-1 rounded-full '>
             {
                 user?.photoURL &&
@@ -88,7 +107,7 @@ const NavBar = () => {
                         <label tabIndex={0} className="btn btn-sm btn-ghost ">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content z-20 top-8  p-2 bg-gray-600 dark:text-gray-50  rounded-box space-y-1">
+                        <ul tabIndex={0} className="menu menu-sm dropdown-content z-20 top-8 -right-8  p-2 bg-base-100  rounded-box space-y-1">
                             {links1}
                         </ul>
                     </div>

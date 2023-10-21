@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import Cart from '../../Components/Cart/Cart';
 import LoadingRoute from '../../Components/LoadingRoute/LoadingRoute';
+import { Link } from '@react-email/link';
 
 const BrandItem = () => {
 
@@ -52,12 +53,12 @@ const BrandItem = () => {
                                             <div className="block md:hidden text-left" >
                                                 <h1 className="mb-2 lg:mb-5 text-3xl md:text-5xl font-bold">Hello there</h1>
                                                 <p className="mb-2 lg:mb-5">Welcome to the heart of our company - our brands.</p>
-                                                <button className="btn btn-sm lg:btn btn-primary">Get Started</button>
+                                                <Link href="mailto:asifahammednishst@gmail.com" className='btn btn-sm'>Contact Us</Link>
                                             </div>
                                             <div className="hidden md:block text-left">
                                                 <h1 className="mb-2 lg:mb-5 text-3xl md:text-5xl font-bold">Hello there</h1>
                                                 <p className="mb-2 lg:mb-5">Welcome to the heart of our company - our brands. These are the pillars of our existence, each with a unique purpose and mission. In this section, I invite you to get to know our family of brands, the very essence of what we do.</p>
-                                                <button className="btn btn-sm lg:btn btn-primary">Get Started</button>
+                                                <Link href="mailto:asifahammednishst@gmail.com" className='btn btn-sm'>Contact Us</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -73,12 +74,12 @@ const BrandItem = () => {
                                             <div className="block md:hidden text-left" >
                                                 <h1 className="mb-2 lg:mb-5 text-3xl md:text-5xl font-bold">Hello there</h1>
                                                 <p className="mb-2 lg:mb-5">Welcome to the heart of our company - our brands.</p>
-                                                <button className="btn btn-sm lg:btn btn-primary">Get Started</button>
+                                                <Link href="mailto:asifahammednishst@gmail.com" className='btn btn-sm'>Contact Us</Link>
                                             </div>
                                             <div className="hidden md:block text-left">
                                                 <h1 className="mb-2 lg:mb-5 text-3xl md:text-5xl font-bold">Hello there</h1>
                                                 <p className="mb-2 lg:mb-5">Welcome to the heart of our company - our brands. These are the pillars of our existence, each with a unique purpose and mission. In this section, I invite you to get to know our family of brands, the very essence of what we do.</p>
-                                                <button className="btn btn-sm lg:btn btn-primary">Get Started</button>
+                                                <Link href="mailto:asifahammednishst@gmail.com" className='btn btn-sm'>Contact Us</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -94,12 +95,12 @@ const BrandItem = () => {
                                             <div className="block md:hidden text-left" >
                                                 <h1 className="mb-2 lg:mb-5 text-3xl md:text-5xl font-bold">Hello there</h1>
                                                 <p className="mb-2 lg:mb-5">Welcome to the heart of our company - our brands.</p>
-                                                <button className="btn btn-sm lg:btn btn-primary">Get Started</button>
+                                                <Link href="mailto:asifahammednishst@gmail.com" className='btn btn-sm'>Contact Us</Link>
                                             </div>
                                             <div className="hidden md:block text-left">
                                                 <h1 className="mb-2 lg:mb-5 text-3xl md:text-5xl font-bold">Hello there</h1>
                                                 <p className="mb-2 lg:mb-5">Welcome to the heart of our company - our brands. These are the pillars of our existence, each with a unique purpose and mission. In this section, I invite you to get to know our family of brands, the very essence of what we do.</p>
-                                                <button className="btn btn-sm lg:btn btn-primary">Get Started</button>
+                                                <Link href="mailto:asifahammednishst@gmail.com" className='btn btn-sm'>Contact Us</Link>
                                             </div>
                                         </div>
                                     </div>

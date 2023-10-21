@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import swal from 'sweetalert';
 import { AuthContext } from '../../AuthProviders/AuthProvider';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const ProductCard = ({ cart, userCarts, setUserCarts }) => {
     const { user } = useContext(AuthContext);
@@ -45,6 +46,18 @@ const ProductCard = ({ cart, userCarts, setUserCarts }) => {
                 }
             });
     }
+    const handleByNow = () => {
+        toast.warn('No functionality added yet!', {
+            position: "top-right",
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
+    }
     return (
         <div>
             <div className="card card-compact bg-base-100 border ">
@@ -62,7 +75,7 @@ const ProductCard = ({ cart, userCarts, setUserCarts }) => {
                     </div>
                     <div className="card-actions justify-between">
                         <span><button onClick={handleDelete} className='btn btn-sm btn-primary'>X</button> Remove </span>
-                        <button className="btn btn-sm btn-primary">Buy Now</button>
+                        <button onClick={handleByNow} className="btn btn-sm btn-primary">Buy Now</button>
                     </div>
                 </div>
             </div>
